@@ -1,0 +1,44 @@
+<style>
+    .card-columns {
+  @include media-breakpoint-only(md) {
+    column-count: 3;
+  }  
+}
+</style>
+<div class="row"><br/>{{clickMessage}}</div>
+<!--
+  <div class="row">      
+    <div *ngFor="let n of notes" >  
+      <div class="col-md-4 float">
+        <div class="panel panel-default" (click)="onClickNote(n.id)">
+            <div class="panel-heading">{{n.title}}
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-pencil"></span> 
+              </button>
+            </div>
+            <div class="panel-body">
+              <span style="white-space:pre-wrap;">{{n.content.substring(1,25)}}</span>
+            </div>
+             <div class="panel-footer">{{n.date}}</div>
+          </div> 
+      </div>      
+   </div>
+  </div>
+   -->
+
+    <div class="card-columns"> 
+      <div *ngFor="let n of notes" (mouseover)='showButtons(n)' (mouseout)="hideButtons(n)">
+        <div class="card card-outline-info"  >  <!--(click)="onClickNote(n.id)" -->
+           <!--  <img class="card-img-top img-fluid" src="..." alt="Card image cap"> -->
+            <div class="card-block">
+            <div class="card-title"><h3>{{n.title}} </h3></div>
+            <p class="card-text">{{n.content}}</p>
+            <p class="card-text"><small class="text-muted">{{n.date | date: 'dd/MM/yyyy'}}</small></p>  
+            <p class="card-text text-center">&nbsp;
+              <i [hidden]="n.hide" (click)="onClickEdit(n)" class="fa fa-pencil"></i>
+             </p>
+            </div>            
+        </div>
+      </div>
+    </div>
+

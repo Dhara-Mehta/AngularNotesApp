@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="input-group">          
+          <input id="textBox"  type="text" class="form-control" name="note" placeholder="Take a note ..." (click)="onNewNote()">
+          <span class="input-group-addon btn btn-primary"><i class="fa fa-list-ul"></i></span>
+          <span class="input-group-addon btn btn-primary"><i class="fa fa-photo"></i></span>
+        </div>
+      </form>
+    </div>
+  </div>
+ <!-- <div class="row">
+    <div class="card card-outline-success mb-3">
+            <div class="card-block">
+            <div class="card-title">{{note.title}}
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-pencil"></span> 
+              </button>
+            </div>
+            <div class="card-text">
+              <textarea id="note" class="form-control" rows="5" id="comment" name="note" [(ngModel)]="note.content" placeholder="content"></textarea>
+              {{note.date}}
+            </div>
+          </div>          
+      <span class="label label-default">{{note.content}}</span>
+    </div>  
+  </div>  -->
+<note-list></note-list>
