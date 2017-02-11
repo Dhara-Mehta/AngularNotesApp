@@ -5,10 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var NOTES = [
     { id: 1, title: "Note 1", content: "First Note Content", type: "Note", date: new Date(), hide: true },
     { id: 2, title: "Note 2", content: "Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n ", type: "Note", date: new Date(), hide: true },
@@ -42,15 +39,14 @@ var NoteListComponent = (function () {
     NoteListComponent.prototype.onClickEdit = function (n) {
         this.clickMessage = "Clicked Edit for " + n.title;
     };
-    NoteListComponent = __decorate([
-        core_1.Component({
-            selector: 'note-list',
-            templateUrl: 'app/templates/notelisttemplate.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], NoteListComponent);
     return NoteListComponent;
 }());
+NoteListComponent = __decorate([
+    core_1.Component({
+        selector: 'note-list',
+        templateUrl: 'app/templates/notelisttemplate.html'
+    })
+], NoteListComponent);
 exports.NoteListComponent = NoteListComponent;
 ;
 //# sourceMappingURL=app.notelistcomponent.js.map
