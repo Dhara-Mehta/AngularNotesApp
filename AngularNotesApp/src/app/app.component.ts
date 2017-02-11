@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Note} from './models/Note';
 import {NoteListComponent} from './app.notelistcomponent';
-
+import {EditNoteComponent} from './app.editnotecomponent';
 
 
 
