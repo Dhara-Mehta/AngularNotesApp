@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Note_1 = require("./models/Note");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var EditNoteComponent = (function () {
     function EditNoteComponent(modalService) {
@@ -35,6 +36,10 @@ var EditNoteComponent = (function () {
     };
     return EditNoteComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Note_1.Note)
+], EditNoteComponent.prototype, "note", void 0);
 EditNoteComponent = __decorate([
     core_1.Component({
         selector: 'modal-edit-note',

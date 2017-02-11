@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-
+import {Component, Input} from '@angular/core';
+import {Note} from './models/Note'
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,6 +7,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: 'app/templates/EditNote.html'
 })
 export class EditNoteComponent {
+  @Input()
+  note: Note;
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}

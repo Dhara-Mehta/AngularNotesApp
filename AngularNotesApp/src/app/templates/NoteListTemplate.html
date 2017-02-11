@@ -1,10 +1,38 @@
 <style>
+
+    @media (min-width: 34em) {
     .card-columns {
-  @include media-breakpoint-only(md) {
-    column-count: 3;
-  }  
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
 }
 </style>
+<br/>
 <div class="row"><br/>{{clickMessage}}</div>
 <!--
   <div class="row">      
@@ -25,24 +53,30 @@
    </div>
   </div>
    -->
-
+<!--<div class="row">
+  <div class="col-md-12">-->
     <div class="card-columns"> 
-      <div *ngFor="let n of notes" (mouseover)='showButtons(n)' (mouseout)="hideButtons(n)">
-        <div class="card card-outline-info"  >  <!--(click)="onClickNote(n.id)" -->
-           <!--  <img class="card-img-top img-fluid" src="..." alt="Card image cap"> -->
+      <div *ngFor="let n of notes" (mouseover)='showButtons(n)' (mouseout)="hideButtons(n)" >
+        <div class="card" >
+          <div [ngClass]="n.color">  
+          <!--(click)="onClickNote(n.id)" -->
+             <!--<img class="card-img-top img-fluid" src="..." alt="Card image cap"> -->
             <div class="card-block">
-            <div class="card-title"><h3>{{n.title}} </h3></div>
-            <p class="card-text">{{n.content}}</p>
+            <div class="card-title"><h3 >{{n.title}} </h3></div>
+            <pre><p class="card-text" style="overflow-x: hidden">{{n.content}}</p></pre>
             <p class="card-text"><small class="text-muted">{{n.date | date: 'dd/MM/yyyy'}}</small></p>  
             <!--<p class="card-text text-center">&nbsp;
               <i [hidden]="n.hide" (click)="onClickEdit(n)" class="fa fa-pencil"></i>
              </p>-->
              <p class="card-text text-center">&nbsp;
-               <modal-edit-note [hidden]="n.hide"></modal-edit-note>
+               <modal-edit-note [hidden]="n.hide" [note]="n"></modal-edit-note>
               <!--<i [hidden]="n.hide" (click)="onClickEdit(n)" class="fa fa-pencil"></i>-->
              </p>
             </div>            
         </div>
+        </div>
       </div>
     </div>
+    <!--</div>
+    </div>-->
 

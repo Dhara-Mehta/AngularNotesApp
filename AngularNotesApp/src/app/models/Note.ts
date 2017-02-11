@@ -5,4 +5,5 @@ export class Note{
   type: string;
   date: Date;
   hide: boolean;
+  color: string;
 }
