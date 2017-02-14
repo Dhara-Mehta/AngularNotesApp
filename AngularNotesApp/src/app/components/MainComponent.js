@@ -6,8 +6,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var MainComponent = (function () {
+    function MainComponent() {
         this.note = {
             id: 1,
             title: "My First Note",
@@ -18,16 +18,16 @@ var AppComponent = (function () {
             color: "white"
         };
     }
-    AppComponent.prototype.onNewNote = function () {
+    MainComponent.prototype.onNewNote = function () {
         this.content = this.note.content;
     };
-    return AppComponent;
+    return MainComponent;
 }());
-AppComponent = __decorate([
+MainComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         templateUrl: 'app/templates/apptemplate.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MainComponent);
+exports.MainComponent = MainComponent;
+//# sourceMappingURL=MainComponent.js.map

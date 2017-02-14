@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Note} from './models/Note';
-import {ColorPickerComponent} from './components/ColorPickerComponent';
+import {Note} from '../models/Note';
+import {ColorPickerComponent} from './ColorPickerComponent';
 
 const NOTES : Note[] = [
   {id: 1, title: "Note 1", content: "First Note Content", type: "Note", date: new Date(), hide: true, color:"list-group-item-success"},

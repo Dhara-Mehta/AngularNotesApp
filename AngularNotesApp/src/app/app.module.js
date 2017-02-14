@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
-var app_component_1 = require("./app.component");
-var app_notelistcomponent_1 = require("./app.notelistcomponent");
-var app_editnotecomponent_1 = require("./app.editnotecomponent");
+var MainComponent_1 = require("./components/MainComponent");
+var NoteListComponent_1 = require("./components/NoteListComponent");
+var EditNoteComponent_1 = require("./components/EditNoteComponent");
 var ColorPickerComponent_1 = require("./components/ColorPickerComponent");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var AppModule = (function () {
@@ -21,8 +21,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, ng_bootstrap_1.NgbModule, ng_bootstrap_1.NgbModule.forRoot()],
-        declarations: [app_component_1.AppComponent, app_notelistcomponent_1.NoteListComponent, app_editnotecomponent_1.EditNoteComponent, ColorPickerComponent_1.ColorPickerComponent],
-        bootstrap: [app_component_1.AppComponent]
+        declarations: [MainComponent_1.MainComponent, NoteListComponent_1.NoteListComponent, EditNoteComponent_1.EditNoteComponent, ColorPickerComponent_1.ColorPickerComponent],
+        bootstrap: [MainComponent_1.MainComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Note_1 = require("./models/Note");
+var Note_1 = require("../models/Note");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var EditNoteComponent = (function () {
     function EditNoteComponent(modalService) {
@@ -48,4 +48,4 @@ EditNoteComponent = __decorate([
     __metadata("design:paramtypes", [ng_bootstrap_1.NgbModal])
 ], EditNoteComponent);
 exports.EditNoteComponent = EditNoteComponent;
-//# sourceMappingURL=app.editnotecomponent.js.map
+//# sourceMappingURL=EditNoteComponent.js.map

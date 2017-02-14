@@ -52,4 +52,4 @@ NoteListComponent = __decorate([
 ], NoteListComponent);
 exports.NoteListComponent = NoteListComponent;
 ;
-//# sourceMappingURL=app.notelistcomponent.js.map
+//# sourceMappingURL=NoteListComponent.js.map

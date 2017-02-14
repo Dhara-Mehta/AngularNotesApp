@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Note} from './models/Note';
-import {NoteListComponent} from './app.notelistcomponent';
-import {EditNoteComponent} from './app.editnotecomponent';
+import {Note} from '../models/Note';
+import {NoteListComponent} from './NoteListComponent';
+import {EditNoteComponent} from './EditNoteComponent';
 
 
 
@@ -9,7 +9,7 @@ import {EditNoteComponent} from './app.editnotecomponent';
   selector: 'my-app',
   templateUrl: 'app/templates/apptemplate.html'
 })
-export class AppComponent  { 
+export class MainComponent  { 
   note: Note = {
     id : 1,
     title: "My First Note", 

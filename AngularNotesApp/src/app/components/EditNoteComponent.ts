@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Note} from './models/Note'
+import {Note} from '../models/Note'
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
