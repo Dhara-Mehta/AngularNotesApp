@@ -14,7 +14,8 @@ var AppComponent = (function () {
             content: "This is my first note.",
             type: "Note",
             date: new Date(),
-            hide: true
+            hide: true,
+            color: "white"
         };
     }
     AppComponent.prototype.onNewNote = function () {

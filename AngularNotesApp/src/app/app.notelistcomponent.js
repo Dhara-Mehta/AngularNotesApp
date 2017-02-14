@@ -39,6 +39,9 @@ var NoteListComponent = (function () {
     NoteListComponent.prototype.onClickEdit = function (n) {
         this.clickMessage = "Clicked Edit for " + n.title;
     };
+    NoteListComponent.prototype.changeColor = function (selectedColour, n) {
+        n.color = selectedColour;
+    };
     return NoteListComponent;
 }());
 NoteListComponent = __decorate([

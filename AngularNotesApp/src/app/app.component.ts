@@ -16,7 +16,8 @@ export class AppComponent  {
     content: "This is my first note.",
     type: "Note",
     date: new Date(),
-    hide: true
+    hide: true,
+    color: "white"
   };  
 
 content: string;
@@ -24,4 +25,7 @@ content: string;
   onNewNote(){
     this.content = this.note.content;
   }
+
+
+
 }

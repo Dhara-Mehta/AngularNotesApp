@@ -7,10 +7,10 @@
   <div class="modal-body">
     <form >
       <div class="form-group ">
-          <input id="textBox"  type="text" class="form-control border-0 " name="note" [(ngModel)]="note.title" placeholder="Take a note ...">
+          <input id="textBox"  type="text" class="form-control border-0 " name="note" [(ngModel)]="note.title" placeholder="Title ...">
       </div>
       <div class="form-group">
-          <textarea class="form-control border-0" rows="10" ng-default-control [(ngModel)]="note.content" name="content"></textarea>
+         <pre> <textarea class="form-control border-0" rows="10" ng-default-control [(ngModel)]="note.content" name="content" placeholder="Content ..."></textarea></pre>
       </div>      
     </form>
     

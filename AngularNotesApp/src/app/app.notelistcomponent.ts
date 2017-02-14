@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Note} from './models/Note';
-
+import {ColorPickerComponent} from './components/ColorPickerComponent';
 
 const NOTES : Note[] = [
   {id: 1, title: "Note 1", content: "First Note Content", type: "Note", date: new Date(), hide: true, color:"list-group-item-success"},
@@ -44,6 +44,10 @@ export class NoteListComponent{
 
   onClickEdit(n: Note){
     this.clickMessage = "Clicked Edit for " + n.title;
+  }
+
+  changeColor(selectedColour: string, n: Note){
+    n.color = selectedColour;
   }
 
 };

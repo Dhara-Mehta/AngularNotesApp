@@ -68,9 +68,11 @@
             <!--<p class="card-text text-center">&nbsp;
               <i [hidden]="n.hide" (click)="onClickEdit(n)" class="fa fa-pencil"></i>
              </p>-->
-             <p class="card-text text-center">&nbsp;
+             <p class="card-text text-left">&nbsp;
                <modal-edit-note [hidden]="n.hide" [note]="n"></modal-edit-note>
               <!--<i [hidden]="n.hide" (click)="onClickEdit(n)" class="fa fa-pencil"></i>-->
+              <color-picker [hidden]="n.hide" (colorName)="changeColor($event, n)"></color-picker>
+              <!--<color-picker #colorpicked></color-picker><span>{{colorpicked.colorName}}</span>-->
              </p>
             </div>            
         </div>

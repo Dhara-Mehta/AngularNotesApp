@@ -11,6 +11,7 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var app_notelistcomponent_1 = require("./app.notelistcomponent");
 var app_editnotecomponent_1 = require("./app.editnotecomponent");
+var ColorPickerComponent_1 = require("./components/ColorPickerComponent");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var AppModule = (function () {
     function AppModule() {
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, ng_bootstrap_1.NgbModule, ng_bootstrap_1.NgbModule.forRoot()],
-        declarations: [app_component_1.AppComponent, app_notelistcomponent_1.NoteListComponent, app_editnotecomponent_1.EditNoteComponent],
+        declarations: [app_component_1.AppComponent, app_notelistcomponent_1.NoteListComponent, app_editnotecomponent_1.EditNoteComponent, ColorPickerComponent_1.ColorPickerComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
