@@ -5,26 +5,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
-var NOTES = [
-    { id: 1, title: "Note 1", content: "First Note Content", type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 2, title: "Note 2", content: "Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n ", type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 3, title: "Note 3", content: "Third Note Content", type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 4, title: "Note 4", content: "Fourth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content Third Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        type: "Note", date: new Date(), hide: true, color: "list-group-item-warning" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        type: "Note", date: new Date(), hide: true, color: "list-group-item-info" }
-];
+var note_service_1 = require("../note.service");
 var NoteListComponent = (function () {
-    function NoteListComponent() {
-        this.notes = NOTES;
+    function NoteListComponent(noteService) {
+        this.noteService = noteService;
         this.columns = 3;
     }
     //hide: boolean = true;
+    NoteListComponent.prototype.ngOnInit = function () {
+        this.getNotes();
+    };
+    NoteListComponent.prototype.getNotes = function () {
+        var _this = this;
+        this.noteService.getNotes().then(function (x) { return _this.notes = x; });
+    };
     NoteListComponent.prototype.onClickNote = function (noteId) {
         this.clickMessage = noteId.toString();
     };
@@ -47,8 +45,10 @@ var NoteListComponent = (function () {
 NoteListComponent = __decorate([
     core_1.Component({
         selector: 'note-list',
-        templateUrl: 'app/templates/notelisttemplate.html'
-    })
+        templateUrl: 'app/templates/notelisttemplate.html',
+        providers: [note_service_1.NoteService]
+    }),
+    __metadata("design:paramtypes", [note_service_1.NoteService])
 ], NoteListComponent);
 exports.NoteListComponent = NoteListComponent;
 ;

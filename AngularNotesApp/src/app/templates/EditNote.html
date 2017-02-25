@@ -1,4 +1,5 @@
 <template #content let-c="close" let-d="dismiss">
+  <div [ngClass]="note.color">
   <div class="modal-header border-0">
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
@@ -7,16 +8,17 @@
   <div class="modal-body">
     <form >
       <div class="form-group ">
-          <input id="textBox"  type="text" class="form-control border-0 " name="note" [(ngModel)]="note.title" placeholder="Title ...">
+          <input id="textBox"  type="text" class="form-control border-0" [ngClass]="note.color" name="note" [(ngModel)]="note.title" placeholder="Title ...">
       </div>
       <div class="form-group">
-         <pre> <textarea class="form-control border-0" rows="10" ng-default-control [(ngModel)]="note.content" name="content" placeholder="Content ..."></textarea></pre>
+         <pre> <textarea class="form-control border-0" rows="10" [ngClass]="note.color" ng-default-control [(ngModel)]="note.content" name="content" placeholder="Content ..."></textarea></pre>
       </div>      
     </form>
     
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-secondary btn-sm border-0" (click)="c('Close click')"><small><b>DONE</b></small></button>
+  </div>
   </div>
 </template>
 
