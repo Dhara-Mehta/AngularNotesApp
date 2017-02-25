@@ -8,15 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var MainComponent = (function () {
     function MainComponent() {
-        this.note = {
-            id: 1,
-            title: "My First Note",
-            content: "This is my first note.",
-            type: "Note",
-            date: new Date(),
-            hide: true,
-            color: "white"
-        };
     }
     MainComponent.prototype.onNewNote = function () {
         this.content = this.note.content;

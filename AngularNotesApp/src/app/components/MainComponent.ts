@@ -10,17 +10,9 @@ import {EditNoteComponent} from './EditNoteComponent';
   templateUrl: 'app/templates/apptemplate.html'
 })
 export class MainComponent  { 
-  note: Note = {
-    id : 1,
-    title: "My First Note", 
-    content: "This is my first note.",
-    type: "Note",
-    date: new Date(),
-    hide: true,
-    color: "white"
-  };  
+  note: Note;  
 
-content: string;
+  content: string;
 
   onNewNote(){
     this.content = this.note.content;

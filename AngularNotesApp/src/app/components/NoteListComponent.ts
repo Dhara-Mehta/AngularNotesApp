@@ -6,8 +6,7 @@ import {OnInit} from '@angular/core';
 
 @Component({
     selector: 'note-list',
-    templateUrl: 'app/templates/notelisttemplate.html',
-    providers: [NoteService]
+    templateUrl: 'app/templates/notelisttemplate.html'
 })
 export class NoteListComponent implements OnInit{
 

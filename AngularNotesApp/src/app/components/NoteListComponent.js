@@ -45,8 +45,7 @@ var NoteListComponent = (function () {
 NoteListComponent = __decorate([
     core_1.Component({
         selector: 'note-list',
-        templateUrl: 'app/templates/notelisttemplate.html',
-        providers: [note_service_1.NoteService]
+        templateUrl: 'app/templates/notelisttemplate.html'
     }),
     __metadata("design:paramtypes", [note_service_1.NoteService])
 ], NoteListComponent);
