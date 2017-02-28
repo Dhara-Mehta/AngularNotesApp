@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Note} from '../models/Note';
 import {NoteListComponent} from './NoteListComponent';
 import {EditNoteComponent} from './EditNoteComponent';
+import {ToDoListComponent} from './ToDoListComponent';
 
 
 

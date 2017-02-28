@@ -13,6 +13,7 @@ var NoteListComponent_1 = require("./components/NoteListComponent");
 var EditNoteComponent_1 = require("./components/EditNoteComponent");
 var ColorPickerComponent_1 = require("./components/ColorPickerComponent");
 var note_service_1 = require("./note.service");
+var ToDoListComponent_1 = require("./components/ToDoListComponent");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var AppModule = (function () {
     function AppModule() {
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, ng_bootstrap_1.NgbModule, ng_bootstrap_1.NgbModule.forRoot()],
-        declarations: [MainComponent_1.MainComponent, NoteListComponent_1.NoteListComponent, EditNoteComponent_1.EditNoteComponent, ColorPickerComponent_1.ColorPickerComponent],
+        declarations: [MainComponent_1.MainComponent, NoteListComponent_1.NoteListComponent, EditNoteComponent_1.EditNoteComponent, ColorPickerComponent_1.ColorPickerComponent, ToDoListComponent_1.ToDoListComponent],
         providers: [note_service_1.NoteService],
         bootstrap: [MainComponent_1.MainComponent]
     })
