@@ -15,9 +15,9 @@
         <li class="list-group-item border-0 m-0 p-0" *ngFor="let t of todos.tasks">           
             <div class="input-group border-0" *ngIf="!t.complete">
             <span class="input-group-addon border-0 bg-white">
-                <input type="checkbox" aria-label="Checkbox for following text input" [ngModel]=t.complete>
+                <input type="checkbox" aria-label="Checkbox for following text input" [(ngModel)]=t.complete>
             </span>
-            <input type="text" class="form-control form-control-sm border-0" aria-label="Text input with checkbox" [ngModel]=t.taskName>
+            <input type="text" class="form-control form-control-sm border-0" aria-label="Text input with checkbox" [(ngModel)]=t.taskName>
             <span class="input-group-addon btn bg-white border-0 fa fa-close"></span>
             </div>     
         </li>
@@ -35,9 +35,9 @@
         <li class="list-group-item border-0 m-1 p-0" *ngIf="t.complete">           
             <div class="input-group border-0">
             <span class="input-group-addon border-0 bg-white">
-                <input type="checkbox" aria-label="Checkbox for following text input" [checked]=t.complete>
+                <input type="checkbox" aria-label="Checkbox for following text input" [(ngModel)]=t.complete>
             </span>
-            <input type="text" class="form-control form-control-sm border-0" aria-label="Text input with checkbox" [ngModel]=t.taskName>
+            <input type="text" class="form-control form-control-sm border-0" aria-label="Text input with checkbox" [(ngModel)]=t.taskName>
             <span class="input-group-addon btn bg-white border-0 fa fa-close"></span>
             </div>     
         </li>
