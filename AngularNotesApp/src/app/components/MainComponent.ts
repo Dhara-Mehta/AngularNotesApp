@@ -11,13 +11,41 @@ import {ToDoListComponent} from './ToDoListComponent';
   templateUrl: 'app/templates/apptemplate.html'
 })
 export class MainComponent  { 
-  note: Note;  
+  note: Note = {
+  id: 0,
+  title: "",
+  content:"",
+  todo: null,
+  isTodo: false,
+  type: "note",
+  date: null,
+  hide: false,
+  color: ""
+  };  
+  
+  todo: Note = {
+  id: 0,
+  title: "",
+  content:null,
+  todo: [{TodoId: 0, TaskName: "", Complete: false}],
+  isTodo: true,
+  type: "note",
+  date: null,
+  hide: false,
+  color: ""
+  }
 
   content: string;
 
-  onNewNote(){
-    this.content = this.note.content;
-  }
+  pencilIcon: string = "fa fa-pencil fa-fw";
+
+  listIcon: string = "fa fa-list-ul";
+
+  
+
+  // onNewNote(){
+  //   this.content = this.note.content;
+  // }
 
 
 

@@ -14,8 +14,8 @@ var NoteListComponent = (function () {
     function NoteListComponent(noteService) {
         this.noteService = noteService;
         this.columns = 3;
+        this.pencilIcon = "fa fa-pencil fa-fw";
     }
-    //hide: boolean = true;
     NoteListComponent.prototype.ngOnInit = function () {
         this.getNotes();
     };

@@ -9,40 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
-var mock_todo_1 = require("../mock-todo");
 var ToDoListComponent = (function () {
-    function ToDoListComponent(modalService) {
-        this.modalService = modalService;
-        this.todos = mock_todo_1.TODOS[0];
+    function ToDoListComponent() {
     }
-    ToDoListComponent.prototype.open = function (content) {
-        var _this = this;
-        this.modalService.open(content).result.then(function (result) {
-            _this.closeResult = "Closed with: " + result;
-        }, function (reason) {
-            _this.closeResult = "Dismissed " + _this.getDismissReason(reason);
-        });
+    ToDoListComponent.prototype.onAddTask = function (value) {
+        //this.task = value;
+        this.todos.push({ TodoId: 0, TaskName: value, Complete: false });
+        this.task = "";
     };
-    ToDoListComponent.prototype.getDismissReason = function (reason) {
-        if (reason === ng_bootstrap_1.ModalDismissReasons.ESC) {
-            return 'by pressing ESC';
-        }
-        else if (reason === ng_bootstrap_1.ModalDismissReasons.BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        }
-        else {
-            return "with: " + reason;
-        }
+    ToDoListComponent.prototype.onDelete = function (task) {
+        this.todos.splice(this.todos.indexOf(task), 1);
     };
     return ToDoListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], ToDoListComponent.prototype, "todos", void 0);
 ToDoListComponent = __decorate([
     core_1.Component({
         selector: "to-do-list",
         templateUrl: 'app/templates/ToDoListTemplate.html'
-    }),
-    __metadata("design:paramtypes", [ng_bootstrap_1.NgbModal])
+    })
 ], ToDoListComponent);
 exports.ToDoListComponent = ToDoListComponent;
 //# sourceMappingURL=ToDoListComponent.js.map

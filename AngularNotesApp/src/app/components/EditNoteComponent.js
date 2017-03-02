@@ -40,6 +40,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Note_1.Note)
 ], EditNoteComponent.prototype, "note", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], EditNoteComponent.prototype, "imgIcon", void 0);
 EditNoteComponent = __decorate([
     core_1.Component({
         selector: 'modal-edit-note',

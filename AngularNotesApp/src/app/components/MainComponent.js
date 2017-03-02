@@ -8,10 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var MainComponent = (function () {
     function MainComponent() {
+        this.note = {
+            id: 0,
+            title: "",
+            content: "",
+            todo: null,
+            isTodo: false,
+            type: "note",
+            date: null,
+            hide: false,
+            color: ""
+        };
+        this.todo = {
+            id: 0,
+            title: "",
+            content: null,
+            todo: [{ TodoId: 0, TaskName: "", Complete: false }],
+            isTodo: true,
+            type: "note",
+            date: null,
+            hide: false,
+            color: ""
+        };
+        this.pencilIcon = "fa fa-pencil fa-fw";
+        this.listIcon = "fa fa-list-ul";
+        // onNewNote(){
+        //   this.content = this.note.content;
+        // }
     }
-    MainComponent.prototype.onNewNote = function () {
-        this.content = this.note.content;
-    };
     return MainComponent;
 }());
 MainComponent = __decorate([

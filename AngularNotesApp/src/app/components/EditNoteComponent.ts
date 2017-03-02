@@ -9,6 +9,10 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class EditNoteComponent {
   @Input()
   note: Note;
+
+  @Input()
+  imgIcon: string;
+  
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}

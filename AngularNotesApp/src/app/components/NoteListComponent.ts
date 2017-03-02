@@ -15,7 +15,7 @@ export class NoteListComponent implements OnInit{
   notes: Note[];
   clickMessage: string;
   columns: number = 3;
-  //hide: boolean = true;
+  pencilIcon: string = "fa fa-pencil fa-fw"
 
   ngOnInit(): void{
     this.getNotes();

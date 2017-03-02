@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {Component, Input} from '@angular/core';
 import { ToDo } from '../models/ToDo';
-import { TODOS } from '../mock-todo';
+import { Note } from '../models/Note';
+import {NOTES} from '../mock-notes';
 
 
 @Component({
@@ -9,27 +9,19 @@ import { TODOS } from '../mock-todo';
     templateUrl: 'app/templates/ToDoListTemplate.html'
 })
 export class ToDoListComponent{
+@Input()
+    todos: ToDo[];
 
-    todos: ToDo = TODOS[0];
+  task: string;
 
-    closeResult: string;
-    constructor(private modalService: NgbModal) {}
-
-    open(content: any) {
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+  onAddTask(value: string){
+    //this.task = value;
+    this.todos.push({TodoId: 0, TaskName: value, Complete: false});
+    this.task = "";
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  onDelete(task: ToDo){
+    this.todos.splice(this.todos.indexOf(task), 1);
   }
+
 }
