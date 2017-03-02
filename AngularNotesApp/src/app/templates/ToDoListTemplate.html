@@ -8,13 +8,13 @@
     }
 </style>
     <ul class="list-group">
-        <li class="list-group-item border-0 m-0 p-0 bg-white" *ngFor="let t of todos">           
+        <li class="list-group-item border-0 m-0 p-0 bg-white" *ngFor="let t of todos" (mouseover)='showDeleteButton(t)' (mouseout)="HideDeleteButton(t)">           
             <div class="input-group border-0 bg-white" *ngIf="!t.Complete">
             <span class="input-group-addon border-0 bg-white">
                 <input type="checkbox" aria-label="Checkbox for following text input" [(ngModel)]=t.Complete>
             </span>
             <input type="text" class="form-control form-control-sm border-0 bg-white" aria-label="Text input with checkbox" [(ngModel)]=t.TaskName>
-            <span class="input-group-addon btn bg-white border-0 fa fa-close" (click)="onDelete(t)"></span>
+            <span class="input-group-addon btn bg-white border-0 fa fa-close" (click)="onDelete(t)" [hidden]="!t.MouseOver" ></span>
             </div>     
         </li>
     </ul>    
@@ -28,13 +28,13 @@
     <hr/>
 
     <ul class="list-group" *ngFor="let t of todos">
-        <li class="list-group-item border-0 m-0 p-0 bg-white" *ngIf="t.Complete">           
+        <li class="list-group-item border-0 m-0 p-0 bg-white" *ngIf="t.Complete" (mouseover)='showDeleteButton(t)' (mouseout)="HideDeleteButton(t)">           
             <div class="input-group border-0">
             <span class="input-group-addon border-0 bg-white">
                 <input type="checkbox" aria-label="Checkbox for following text input" [(ngModel)]=t.Complete>
             </span>
             <input type="text" class="form-control form-control-sm border-0 bg-white strikethrough" aria-label="Text input with checkbox" [(ngModel)]=t.TaskName>
-            <span class="input-group-addon btn bg-white border-0 fa fa-close" (click)="onDelete(t)"></span>
+            <span class="input-group-addon btn bg-white border-0 fa fa-close" (click)="onDelete(t)" [hidden]="!t.MouseOver" ></span>
             </div>     
         </li>
     </ul>

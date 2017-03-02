@@ -16,7 +16,7 @@ export class ToDoListComponent{
 
   onAddTask(value: string){
     //this.task = value;
-    this.todos.push({TodoId: 0, TaskName: value, Complete: false});
+    this.todos.push({TodoId: 0, TaskName: value, Complete: false, MouseOver: false});
     this.task = "";
   }
 
@@ -24,4 +24,11 @@ export class ToDoListComponent{
     this.todos.splice(this.todos.indexOf(task), 1);
   }
 
+  showDeleteButton(task: ToDo){
+    task.MouseOver = true;
+  }
+
+  HideDeleteButton(task: ToDo){
+    task.MouseOver = false;
+  }
 }

@@ -13,11 +13,11 @@ exports.NOTES = [
         todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-info" },
     { id: 10, title: "Shopping List", content: null,
         todo: [{ TodoId: 1, TaskName: "Milk", Complete: false },
-            { TodoId: 2, TaskName: "Bread", Complete: false },
-            { TodoId: 3, TaskName: "Bananas", Complete: true },
-            { TodoId: 4, TaskName: "Fruits", Complete: false },
-            { TodoId: 5, TaskName: "Veggies", Complete: false },
-            { TodoId: 6, TaskName: "Yogurt", Complete: false }
+            { TodoId: 2, TaskName: "Bread", Complete: false, MouseOver: false },
+            { TodoId: 3, TaskName: "Bananas", Complete: true, MouseOver: false },
+            { TodoId: 4, TaskName: "Fruits", Complete: false, MouseOver: false },
+            { TodoId: 5, TaskName: "Veggies", Complete: false, MouseOver: false },
+            { TodoId: 6, TaskName: "Yogurt", Complete: false, MouseOver: false }
         ], isTodo: true, type: "Todo", date: new Date(), hide: true, color: "list-group-item-info" }
 ];
 //# sourceMappingURL=mock-notes.js.map

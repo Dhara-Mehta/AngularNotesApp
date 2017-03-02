@@ -14,11 +14,17 @@ var ToDoListComponent = (function () {
     }
     ToDoListComponent.prototype.onAddTask = function (value) {
         //this.task = value;
-        this.todos.push({ TodoId: 0, TaskName: value, Complete: false });
+        this.todos.push({ TodoId: 0, TaskName: value, Complete: false, MouseOver: false });
         this.task = "";
     };
     ToDoListComponent.prototype.onDelete = function (task) {
         this.todos.splice(this.todos.indexOf(task), 1);
+    };
+    ToDoListComponent.prototype.showDeleteButton = function (task) {
+        task.MouseOver = true;
+    };
+    ToDoListComponent.prototype.HideDeleteButton = function (task) {
+        task.MouseOver = false;
     };
     return ToDoListComponent;
 }());

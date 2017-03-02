@@ -27,7 +27,7 @@ export class MainComponent  {
   id: 0,
   title: "",
   content:null,
-  todo: [{TodoId: 0, TaskName: "", Complete: false}],
+  todo: [{TodoId: 0, TaskName: "", Complete: false, MouseOver: false}],
   isTodo: true,
   type: "note",
   date: null,
