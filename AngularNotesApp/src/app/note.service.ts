@@ -25,7 +25,8 @@ export class NoteService
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.data || { };
+		console.log(body);
+        return body || { };
     }
     
     private handleError (error: Response | any) {
@@ -36,7 +37,8 @@ export class NoteService
             const err = body.error || JSON.stringify(body);
             errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
         } else {
-            errMsg = error.message ? error.message : error.toString();
+            //errMsg = error.toString();
+			console.error(errMsg);
         }
         console.error(errMsg);
         return Promise.reject(errMsg);

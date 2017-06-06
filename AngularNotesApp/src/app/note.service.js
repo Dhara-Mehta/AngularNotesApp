@@ -27,7 +27,8 @@ var NoteService = (function () {
     };
     NoteService.prototype.extractData = function (res) {
         var body = res.json();
-        return body.data || {};
+        console.log(body);
+        return body || {};
     };
     NoteService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure
@@ -38,7 +39,8 @@ var NoteService = (function () {
             errMsg = error.status + " - " + (error.statusText || '') + " " + err;
         }
         else {
-            errMsg = error.message ? error.message : error.toString();
+            //errMsg = error.toString();
+            console.error(errMsg);
         }
         console.error(errMsg);
         return Promise.reject(errMsg);

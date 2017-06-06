@@ -38,14 +38,14 @@ var NoteListComponent = (function () {
         this.clickMessage = "Clicked Edit for " + n.title;
     };
     NoteListComponent.prototype.changeColor = function (selectedColour, n) {
-        n.color = selectedColour;
+        n.Color = selectedColour;
     };
     return NoteListComponent;
 }());
 NoteListComponent = __decorate([
     core_1.Component({
         selector: 'note-list',
-        templateUrl: 'app/templates/notelisttemplate.html'
+        templateUrl: 'app/templates/NoteListTemplate.html'
     }),
     __metadata("design:paramtypes", [note_service_1.NoteService])
 ], NoteListComponent);

@@ -6,7 +6,7 @@ import {OnInit} from '@angular/core';
 
 @Component({
     selector: 'note-list',
-    templateUrl: 'app/templates/notelisttemplate.html'
+    templateUrl: 'app/templates/NoteListTemplate.html'
 })
 export class NoteListComponent implements OnInit{
 
@@ -44,7 +44,7 @@ export class NoteListComponent implements OnInit{
   }
 
   changeColor(selectedColour: string, n: Note){
-    n.color = selectedColour;
+    n.Color = selectedColour;
   }
 
 };

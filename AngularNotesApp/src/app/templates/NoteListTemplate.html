@@ -41,21 +41,21 @@
 <div class="card-columns">
     <div *ngFor="let n of notes" (mouseover)='showButtons(n)' (mouseout)="hideButtons(n)">
         <div class="card">
-            <div [ngClass]="n.color">
+            <div [ngClass]="n.Color">
                 <!--(click)="onClickNote(n.id)" -->
                 <!--<img class="card-img-top img-fluid" src="..." alt="Card image cap"> -->
                 <div class="card-block">
                     <div class="card-title">
-                        <h3>{{n.title}} </h3>
+                        <h3>{{n.Title}} </h3>
                     </div>
-                    <pre><p class="card-text" *ngIf="!n.isTodo"
-            style="overflow-x: hidden; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{n.content}}</p></pre>
+                    <pre><p class="card-text" *ngIf="!n.IsTodo"
+            style="overflow-x: hidden; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{n.Content}}</p></pre>
 
-                    <div class="card-text" *ngIf="n.isTodo">
-                        <to-do-list [todos]="n.todo"></to-do-list>
+                    <div class="card-text" *ngIf="n.IsTodo">
+                        <to-do-list [todos]="n.ToDoItems"></to-do-list>
                     </div>
 
-                    <p class="card-text"><small class="text-muted">{{n.date | date: 'dd/MM/yyyy'}}</small></p>
+                    <p class="card-text"><small class="text-muted">{{n.CreateDate | date: 'dd/MM/yyyy'}}</small></p>
 
                     <p class="card-text text-left">&nbsp;
                         <modal-edit-note [hidden]="n.hide" [note]="n" [imgIcon]="pencilIcon"></modal-edit-note>
