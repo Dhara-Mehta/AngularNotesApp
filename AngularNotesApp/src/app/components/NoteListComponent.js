@@ -21,7 +21,7 @@ var NoteListComponent = (function () {
     };
     NoteListComponent.prototype.getNotes = function () {
         var _this = this;
-        this.noteService.getNotes().then(function (x) { return _this.notes = x; });
+        this.noteService.getNotes().subscribe(function (x) { return _this.notes = x; });
     };
     NoteListComponent.prototype.onClickNote = function (noteId) {
         this.clickMessage = noteId.toString();

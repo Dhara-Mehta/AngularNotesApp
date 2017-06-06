@@ -34,4 +34,8 @@ export class EditNoteComponent {
       return  `with: ${reason}`;
     }
   }
+
+  increaseTextareasize(notetextarea: any){
+    notetextarea.rows += 2;
+  }
 }

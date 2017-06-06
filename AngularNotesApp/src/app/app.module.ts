@@ -8,9 +8,10 @@ import {ColorPickerComponent} from './components/ColorPickerComponent';
 import {NoteService} from './note.service';
 import {ToDoListComponent} from './components/ToDoListComponent';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgbModule, NgbModule.forRoot() ],
+  imports:      [ BrowserModule, FormsModule, NgbModule, NgbModule.forRoot(), HttpModule, JsonpModule ],
   declarations: [ MainComponent, NoteListComponent, EditNoteComponent, ColorPickerComponent, ToDoListComponent ],
   providers:    [ NoteService ],
   bootstrap:    [ MainComponent ]

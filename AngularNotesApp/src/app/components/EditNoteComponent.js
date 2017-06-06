@@ -34,6 +34,9 @@ var EditNoteComponent = (function () {
             return "with: " + reason;
         }
     };
+    EditNoteComponent.prototype.increaseTextareasize = function (notetextarea) {
+        notetextarea.rows += 2;
+    };
     return EditNoteComponent;
 }());
 __decorate([

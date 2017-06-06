@@ -22,7 +22,7 @@ export class NoteListComponent implements OnInit{
   }
 
   getNotes(): void {
-    this.noteService.getNotes().then(x => this.notes = x);
+    this.noteService.getNotes().subscribe(x => this.notes = x);
   }
 
   onClickNote(noteId: number) {

@@ -12,7 +12,7 @@ exports.NOTES = [
     { id: 5, title: "Note 5", content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
         todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-info" },
     { id: 10, title: "Shopping List", content: null,
-        todo: [{ TodoId: 1, TaskName: "Milk", Complete: false },
+        todo: [{ TodoId: 1, TaskName: "Milk", Complete: false, MouseOver: false },
             { TodoId: 2, TaskName: "Bread", Complete: false, MouseOver: false },
             { TodoId: 3, TaskName: "Bananas", Complete: true, MouseOver: false },
             { TodoId: 4, TaskName: "Fruits", Complete: false, MouseOver: false },
