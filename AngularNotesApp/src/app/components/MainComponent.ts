@@ -12,27 +12,27 @@ import {ToDoListComponent} from './ToDoListComponent';
 })
 export class MainComponent  { 
   note: Note = {
-  id: 0,
-  title: "",
-  content:"",
-  todo: null,
-  isTodo: false,
-  type: "note",
-  date: null,
-  hide: false,
-  color: ""
+  Id: 0,
+  Title: "",
+  Content:"",
+  ToDoItems: null,
+  IsTodo: false,
+  NoteType: "note",
+  CreateDate: new Date(),
+  Hide: false,
+  Color: ""
   };  
   
   todo: Note = {
-  id: 0,
-  title: "",
-  content:null,
-  todo: [{TodoId: 0, TaskName: "", Complete: false, MouseOver: false}],
-  isTodo: true,
-  type: "note",
-  date: null,
-  hide: false,
-  color: ""
+  Id: 0,
+  Title: "",
+  Content:null,
+  ToDoItems: [{TodoId: 0, TaskName: "", Complete: false, MouseOver: false}],
+  IsTodo: true,
+  NoteType: "note",
+  CreateDate: new Date(),
+  Hide: false,
+  Color: ""
   }
 
   content: string;

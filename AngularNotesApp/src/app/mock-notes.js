@@ -1,23 +1,23 @@
 "use strict";
 exports.NOTES = [
-    { id: 1, title: "Note 1", content: "First Note Content", todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 2, title: "Note 2", content: "Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n ", todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 3, title: "Note 3", content: "Third Note Content", todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 4, title: "Note 4", content: "Fourth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content Third Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-success" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-warning" },
-    { id: 5, title: "Note 5", content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
-        todo: null, isTodo: false, type: "Note", date: new Date(), hide: true, color: "list-group-item-info" },
-    { id: 10, title: "Shopping List", content: null,
-        todo: [{ TodoId: 1, TaskName: "Milk", Complete: false, MouseOver: false },
+    { Id: 1, Title: "Note 1", Content: "First Note Content", ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-success" },
+    { Id: 2, Title: "Note 2", Content: "Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n Second Note Content\n ", ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-success" },
+    { Id: 3, Title: "Note 3", Content: "Third Note Content", ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-success" },
+    { Id: 4, Title: "Note 4", Content: "Fourth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
+        ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-success" },
+    { Id: 5, Title: "Note 5", Content: "Fifth Note Content Third Line \nThird Line \nThird Line \nThird Line \nThird Line",
+        ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-success" },
+    { Id: 5, Title: "Note 5", Content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
+        ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-warning" },
+    { Id: 5, Title: "Note 5", Content: "Fifth Note Content \n Fourth Note Content \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line \nThird Line",
+        ToDoItems: null, IsTodo: false, NoteType: "Note", CreateDate: new Date(), Hide: true, Color: "list-group-item-info" },
+    { Id: 10, Title: "Shopping List", Content: null,
+        ToDoItems: [{ TodoId: 1, TaskName: "Milk", Complete: false, MouseOver: false },
             { TodoId: 2, TaskName: "Bread", Complete: false, MouseOver: false },
             { TodoId: 3, TaskName: "Bananas", Complete: true, MouseOver: false },
             { TodoId: 4, TaskName: "Fruits", Complete: false, MouseOver: false },
             { TodoId: 5, TaskName: "Veggies", Complete: false, MouseOver: false },
             { TodoId: 6, TaskName: "Yogurt", Complete: false, MouseOver: false }
-        ], isTodo: true, type: "Todo", date: new Date(), hide: true, color: "list-group-item-info" }
+        ], IsTodo: true, NoteType: "ToDoItems", CreateDate: new Date(), Hide: true, Color: "list-group-item-info" }
 ];
 //# sourceMappingURL=mock-notes.js.map

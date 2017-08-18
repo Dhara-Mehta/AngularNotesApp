@@ -3,6 +3,7 @@ import {Note} from './models/Note';
 import {NOTES} from './mock-notes';
 import {Http, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -21,6 +22,27 @@ export class NoteService
         return this.http.get(this.notesURL)
                   .map(this.extractData)
                   .catch(this.handleError);
+    }
+
+	createNote(note: Note): Observable<number> {
+		let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+		console.log("from service");
+		console.log(note);
+		return this.http.post("http://localhost:53282/Note/PostNote", note)
+						.map(this.extractData)
+						.catch(this.handleError);
+    }
+
+    updateNote(note: Note): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(note);
+		console.log("http://localhost:53282/Note/PutNote/" + note.Id);
+        return this.http.put("http://localhost:53282/Note/PutNote/" + note.Id,  note , options)
+            .map(this.extractData)
+            .catch(this.handleError);
     }
 
     private extractData(res: Response) {

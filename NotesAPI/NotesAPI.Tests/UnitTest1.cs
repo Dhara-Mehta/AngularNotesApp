@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NotesAPI.Controllers;
 
 namespace NotesAPI.Tests
 {
@@ -9,6 +10,8 @@ namespace NotesAPI.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            NoteController nctrl = new NoteController();
+            nctrl.PutNote()
         }
     }
 }

@@ -30,21 +30,34 @@ export class NoteListComponent implements OnInit{
   } 
 
   showButtons(note: Note) {
-      note.hide = false;
+      note.Hide = false;
      // this.clickMessage = "show note" + note.id.toString();
   }
 
   hideButtons(note: Note){
-      note.hide = true;
+      note.Hide = true;
      // this.clickMessage = note.id.toString();
   }
 
   onClickEdit(n: Note){
-    this.clickMessage = "Clicked Edit for " + n.title;
+    this.clickMessage = "Clicked Edit for " + n.Title;
   }
 
   changeColor(selectedColour: string, n: Note){
     n.Color = selectedColour;
+
+	//call update note
+	this.updateNote(n);
+  }
+
+  updateNote(note: Note) {
+	if (!note) {return;}
+	console.log("calling service now");
+	console.log(note);
+	this.noteService.updateNote(note)
+	.subscribe(
+		note => this.note,
+		error => this.errorMessage = error);
   }
 
 };

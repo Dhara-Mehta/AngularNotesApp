@@ -6,6 +6,8 @@ import {Note} from '../models/Note';
     templateUrl: "app/templates/ColorPicker.html"
 })
 export class ColorPickerComponent{
+
+
 @Output() colorName = new EventEmitter<string>(); 
 
 onColorPick(colour: any){

@@ -27,18 +27,30 @@ var NoteListComponent = (function () {
         this.clickMessage = noteId.toString();
     };
     NoteListComponent.prototype.showButtons = function (note) {
-        note.hide = false;
+        note.Hide = false;
         // this.clickMessage = "show note" + note.id.toString();
     };
     NoteListComponent.prototype.hideButtons = function (note) {
-        note.hide = true;
+        note.Hide = true;
         // this.clickMessage = note.id.toString();
     };
     NoteListComponent.prototype.onClickEdit = function (n) {
-        this.clickMessage = "Clicked Edit for " + n.title;
+        this.clickMessage = "Clicked Edit for " + n.Title;
     };
     NoteListComponent.prototype.changeColor = function (selectedColour, n) {
         n.Color = selectedColour;
+        //call update note
+        this.updateNote(n);
+    };
+    NoteListComponent.prototype.updateNote = function (note) {
+        var _this = this;
+        if (!note) {
+            return;
+        }
+        console.log("calling service now");
+        console.log(note);
+        this.noteService.updateNote(note)
+            .subscribe(function (note) { return _this.note; }, function (error) { return _this.errorMessage = error; });
     };
     return NoteListComponent;
 }());

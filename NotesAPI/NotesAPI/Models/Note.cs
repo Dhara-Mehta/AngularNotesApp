@@ -23,8 +23,8 @@ namespace NotesAPI.Models
 
     public enum NoteType
     {
-        Basic, 
-        TodoList
+        Basic = 0, 
+        TodoList = 1
     }
 
     //http://www.c-sharpcorner.com/UploadFile/fc9f65/Asp-Net-web-api-with-entity-framework-6-code-first-technique/

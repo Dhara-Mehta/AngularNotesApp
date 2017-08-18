@@ -70,3 +70,6 @@ C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\obj\Debug\NotesAPI.Migration
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\obj\Debug\NotesAPI.csproj.GenerateResource.Cache
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\obj\Debug\NotesAPI.dll
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\obj\Debug\NotesAPI.pdb
+C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\obj\Debug\NotesAPI.csprojResolveAssemblyReference.cache
+C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\bin\NotesAPI.dll.config
+C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI\bin\System.Data.SqlServerCe.dll

@@ -69,7 +69,6 @@ namespace NotesAPI.Controllers
                     throw;
                 }
             }
-
             return StatusCode(HttpStatusCode.NoContent);
         }
 
@@ -77,10 +76,10 @@ namespace NotesAPI.Controllers
         [ResponseType(typeof(Note))]
         public async Task<IHttpActionResult> PostNote(Note note)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             db.Notes.Add(note);
             await db.SaveChangesAsync();
