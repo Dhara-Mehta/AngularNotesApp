@@ -52,7 +52,7 @@
             style="overflow-x: hidden; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{n.Content}}</p></pre>
 
                     <div class="card-text" *ngIf="n.IsTodo">
-                        <to-do-list [todos]="n.ToDoItems"></to-do-list>
+                        <to-do-list [todos]="n.ToDoItems" [note]="n"></to-do-list>
                     </div>
 
                     <p class="card-text"><small class="text-muted">{{n.CreateDate | date: 'dd/MM/yyyy'}}</small></p>

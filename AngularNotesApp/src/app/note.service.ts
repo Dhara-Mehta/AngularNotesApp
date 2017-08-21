@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import {ToDo} from './models/ToDo';
 
 @Injectable()
 export class NoteService
@@ -41,6 +42,17 @@ export class NoteService
         console.log(note);
 		console.log("http://localhost:53282/Note/PutNote/" + note.Id);
         return this.http.put("http://localhost:53282/Note/PutNote/" + note.Id,  note , options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    addTodo(Todo: ToDo): Observable<number> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(Todo);
+        console.log("http://localhost:53282/ToDo/PostToDo/" + Todo);
+        return this.http.post("http://localhost:53282/ToDo/PostToDo/", Todo)
             .map(this.extractData)
             .catch(this.handleError);
     }

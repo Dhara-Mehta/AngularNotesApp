@@ -49,6 +49,7 @@ export class NoteListComponent implements OnInit{
 	//call update note
 	this.updateNote(n);
   }
+ errorMessage: string;
 
   updateNote(note: Note) {
 	if (!note) {return;}
@@ -56,7 +57,7 @@ export class NoteListComponent implements OnInit{
 	console.log(note);
 	this.noteService.updateNote(note)
 	.subscribe(
-		note => this.note,
+		updatednote => note,
 		error => this.errorMessage = error);
   }
 

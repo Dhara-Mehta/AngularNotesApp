@@ -11,7 +11,7 @@ namespace NotesAPI.Tests
         public void TestMethod1()
         {
             NoteController nctrl = new NoteController();
-            nctrl.PutNote()
+            //nctrl.PutNote()
         }
     }
 }

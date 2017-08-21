@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -11,7 +12,9 @@ namespace NotesAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            GlobalConfiguration.Configuration.Formatters
+                   .JsonFormatter.SerializerSettings.Re‌​ferenceLoopHandling
+                   = ReferenceLoopHandling.Ignore;
             //https://www.codeschool.com/discuss/t/how-to-solve-no-access-control-allow-origin-header-is-present-on-the-requested-resource-origin-null-is-therefore-not-allowed-access-in-angular-js/28989/3
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);

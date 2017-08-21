@@ -45,6 +45,16 @@ var NoteService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    NoteService.prototype.addTodo = function (Todo) {
+        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_2.RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(Todo);
+        console.log("http://localhost:53282/ToDo/PostToDo/" + Todo);
+        return this.http.post("http://localhost:53282/ToDo/PostToDo/", Todo)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     NoteService.prototype.extractData = function (res) {
         var body = res.json();
         console.log(body);

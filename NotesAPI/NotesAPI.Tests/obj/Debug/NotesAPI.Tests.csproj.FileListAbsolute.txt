@@ -69,3 +69,4 @@ C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI.Tests\bin\Debug\Newtonsoft.J
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI.Tests\obj\Debug\NotesAPI.Tests.csprojResolveAssemblyReference.cache
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI.Tests\obj\Debug\NotesAPI.Tests.dll
 C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI.Tests\obj\Debug\NotesAPI.Tests.pdb
+C:\Working\Github\AngularNotesApp\NotesAPI\NotesAPI.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

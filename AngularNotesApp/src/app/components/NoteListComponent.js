@@ -50,7 +50,7 @@ var NoteListComponent = (function () {
         console.log("calling service now");
         console.log(note);
         this.noteService.updateNote(note)
-            .subscribe(function (note) { return _this.note; }, function (error) { return _this.errorMessage = error; });
+            .subscribe(function (updatednote) { return note; }, function (error) { return _this.errorMessage = error; });
     };
     return NoteListComponent;
 }());

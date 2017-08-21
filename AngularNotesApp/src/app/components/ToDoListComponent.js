@@ -9,12 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Note_1 = require("../models/Note");
+var note_service_1 = require("../note.service");
 var ToDoListComponent = (function () {
-    function ToDoListComponent() {
+    function ToDoListComponent(noteService) {
+        this.noteService = noteService;
     }
     ToDoListComponent.prototype.onAddTask = function (value) {
         //this.task = value;
-        this.todos.push({ TodoId: 0, TaskName: value, Complete: false, MouseOver: false });
+        this.todos.push({ TodoId: 0, TaskName: value, Complete: false, MouseOver: false, Note_Id: this.note.Id });
+        this.addTodoToNote({ TodoId: 0, TaskName: value, Complete: false, MouseOver: false, Note_Id: this.note.Id });
         this.task = "";
     };
     ToDoListComponent.prototype.onDelete = function (task) {
@@ -26,17 +30,32 @@ var ToDoListComponent = (function () {
     ToDoListComponent.prototype.HideDeleteButton = function (task) {
         task.MouseOver = false;
     };
+    ToDoListComponent.prototype.addTodoToNote = function (todo) {
+        var _this = this;
+        if (!todo) {
+            return;
+        }
+        console.log("calling service now");
+        console.log(todo);
+        this.noteService.addTodo(todo)
+            .subscribe(function (updatedtodo) { return todo; }, function (error) { return _this.errorMessage = error; });
+    };
     return ToDoListComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], ToDoListComponent.prototype, "todos", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Note_1.Note)
+], ToDoListComponent.prototype, "note", void 0);
 ToDoListComponent = __decorate([
     core_1.Component({
         selector: "to-do-list",
         templateUrl: 'app/templates/ToDoListTemplate.html'
-    })
+    }),
+    __metadata("design:paramtypes", [note_service_1.NoteService])
 ], ToDoListComponent);
 exports.ToDoListComponent = ToDoListComponent;
 //# sourceMappingURL=ToDoListComponent.js.map

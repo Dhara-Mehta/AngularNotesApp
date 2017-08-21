@@ -53,7 +53,7 @@ namespace NotesAPI.Controllers
             }
 
             db.Entry(note).State = EntityState.Modified;
-
+            
             try
             {
                 await db.SaveChangesAsync();
