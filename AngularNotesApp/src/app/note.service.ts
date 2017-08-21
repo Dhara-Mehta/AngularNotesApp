@@ -46,13 +46,35 @@ export class NoteService
             .catch(this.handleError);
     }
 
-    addTodo(Todo: ToDo): Observable<number> {
+    addTodo(todo: ToDo): Observable<number> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
         console.log("from service");
-        console.log(Todo);
-        console.log("http://localhost:53282/ToDo/PostToDo/" + Todo);
-        return this.http.post("http://localhost:53282/ToDo/PostToDo/", Todo)
+        console.log(todo);
+        console.log("http://localhost:53282/ToDo/PostToDo/" + todo);
+        return this.http.post("http://localhost:53282/ToDo/PostToDo/", todo)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    updateTodo(todo: ToDo): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(todo);
+        console.log("http://localhost:53282/ToDo/PutToDo/" + todo.TodoId);
+        return this.http.put("http://localhost:53282/ToDo/PutToDo/" + todo.TodoId, todo, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    deleteTodo(todoId: number): Observable<any> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(todoId);
+        console.log("http://localhost:53282/ToDo/DeleteToDo/" + todoId);
+        return this.http.delete("http://localhost:53282/ToDo/DeleteToDo/" + todoId)
             .map(this.extractData)
             .catch(this.handleError);
     }

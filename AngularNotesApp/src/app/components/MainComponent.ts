@@ -27,7 +27,7 @@ export class MainComponent  {
   Id: 0,
   Title: "",
   Content:null,
-  ToDoItems: [{TodoId: 0, TaskName: "", Complete: false, MouseOver: false}],
+  ToDoItems: [{ TodoId: 0, TaskName: "", Complete: false, MouseOver: false, Note_Id: 0}],
   IsTodo: true,
   NoteType: "note",
   CreateDate: new Date(),

@@ -58,9 +58,9 @@
                     <p class="card-text"><small class="text-muted">{{n.CreateDate | date: 'dd/MM/yyyy'}}</small></p>
 
                     <p class="card-text text-left">&nbsp;
-                        <modal-edit-note [hidden]="n.hide" [note]="n" [imgIcon]="pencilIcon"></modal-edit-note>
+                        <modal-edit-note [hidden]="n.Hide" [note]="n" [imgIcon]="pencilIcon"></modal-edit-note>
 
-                        <color-picker [hidden]="n.hide" (colorName)="changeColor($event, n)"></color-picker>
+                        <color-picker [hidden]="n.Hide" (colorName)="changeColor($event, n)"></color-picker>
                     </p>
                 </div>
             </div>

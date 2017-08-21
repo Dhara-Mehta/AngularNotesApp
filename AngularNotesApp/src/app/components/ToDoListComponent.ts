@@ -25,11 +25,17 @@ note: Note;
       this.task = "";
   }
 
-  onDelete(task: ToDo){
+  onDelete(task: ToDo) {
+      this.deleteTodo(task.TodoId);
     this.todos.splice(this.todos.indexOf(task), 1);
   }
 
-  showDeleteButton(task: ToDo){
+  onCheckComplete(task: ToDo) {
+      console.log(task.Complete);
+      this.updateTodo(task);
+  }
+
+  showDeleteButton(task: ToDo) {    
     task.MouseOver = true;
   }
 
@@ -45,6 +51,25 @@ note: Note;
       this.noteService.addTodo(todo)
           .subscribe(
           updatedtodo => todo,
+          error => this.errorMessage = error);
+  }
+
+  updateTodo(todo: ToDo) {
+      if (!todo) { return; }
+      console.log("calling service now");
+      console.log(todo);
+      this.noteService.updateTodo(todo)
+          .subscribe(
+          updatedtodo => todo,
+          error => this.errorMessage = error);
+  }
+
+  deleteTodo(todoId: number) {
+      if (!todoId) { return; }
+      console.log("calling service now");
+      console.log(todoId);
+      this.noteService.deleteTodo(todoId)
+          .subscribe(          
           error => this.errorMessage = error);
   }
 }

@@ -51,7 +51,7 @@ namespace NotesAPI.Controllers
             {
                 return BadRequest();
             }
-
+            note.Hide = true;
             db.Entry(note).State = EntityState.Modified;
             
             try
@@ -80,7 +80,7 @@ namespace NotesAPI.Controllers
             //{
             //    return BadRequest(ModelState);
             //}
-
+            note.Hide = true;
             db.Notes.Add(note);
             await db.SaveChangesAsync();
 

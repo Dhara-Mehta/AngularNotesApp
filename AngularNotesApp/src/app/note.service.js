@@ -45,13 +45,33 @@ var NoteService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
-    NoteService.prototype.addTodo = function (Todo) {
+    NoteService.prototype.addTodo = function (todo) {
         var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
         var options = new http_2.RequestOptions({ headers: headers });
         console.log("from service");
-        console.log(Todo);
-        console.log("http://localhost:53282/ToDo/PostToDo/" + Todo);
-        return this.http.post("http://localhost:53282/ToDo/PostToDo/", Todo)
+        console.log(todo);
+        console.log("http://localhost:53282/ToDo/PostToDo/" + todo);
+        return this.http.post("http://localhost:53282/ToDo/PostToDo/", todo)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    NoteService.prototype.updateTodo = function (todo) {
+        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_2.RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(todo);
+        console.log("http://localhost:53282/ToDo/PutToDo/" + todo.TodoId);
+        return this.http.put("http://localhost:53282/ToDo/PutToDo/" + todo.TodoId, todo, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    NoteService.prototype.deleteTodo = function (todoId) {
+        var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_2.RequestOptions({ headers: headers });
+        console.log("from service");
+        console.log(todoId);
+        console.log("http://localhost:53282/ToDo/DeleteToDo/" + todoId);
+        return this.http.delete("http://localhost:53282/ToDo/DeleteToDo/" + todoId)
             .map(this.extractData)
             .catch(this.handleError);
     };

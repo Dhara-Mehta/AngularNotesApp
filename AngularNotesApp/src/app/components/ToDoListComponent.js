@@ -22,7 +22,12 @@ var ToDoListComponent = (function () {
         this.task = "";
     };
     ToDoListComponent.prototype.onDelete = function (task) {
+        this.deleteTodo(task.TodoId);
         this.todos.splice(this.todos.indexOf(task), 1);
+    };
+    ToDoListComponent.prototype.onCheckComplete = function (task) {
+        console.log(task.Complete);
+        this.updateTodo(task);
     };
     ToDoListComponent.prototype.showDeleteButton = function (task) {
         task.MouseOver = true;
@@ -39,6 +44,26 @@ var ToDoListComponent = (function () {
         console.log(todo);
         this.noteService.addTodo(todo)
             .subscribe(function (updatedtodo) { return todo; }, function (error) { return _this.errorMessage = error; });
+    };
+    ToDoListComponent.prototype.updateTodo = function (todo) {
+        var _this = this;
+        if (!todo) {
+            return;
+        }
+        console.log("calling service now");
+        console.log(todo);
+        this.noteService.updateTodo(todo)
+            .subscribe(function (updatedtodo) { return todo; }, function (error) { return _this.errorMessage = error; });
+    };
+    ToDoListComponent.prototype.deleteTodo = function (todoId) {
+        var _this = this;
+        if (!todoId) {
+            return;
+        }
+        console.log("calling service now");
+        console.log(todoId);
+        this.noteService.deleteTodo(todoId)
+            .subscribe(function (error) { return _this.errorMessage = error; });
     };
     return ToDoListComponent;
 }());
