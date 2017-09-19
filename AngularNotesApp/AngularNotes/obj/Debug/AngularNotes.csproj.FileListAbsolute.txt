@@ -58,6 +58,6 @@ C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\bin\Microsoft.AI.
 C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\bin\Microsoft.AI.WindowsServer.xml
 C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\bin\Microsoft.ApplicationInsights.xml
 C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\obj\Debug\AngularNotes.csprojResolveAssemblyReference.cache
 C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\obj\Debug\AngularNotes.dll
 C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\obj\Debug\AngularNotes.pdb
+C:\Working\Github\AngularNotesApp\AngularNotesApp\AngularNotes\obj\Debug\AngularNotes.csprojResolveAssemblyReference.cache

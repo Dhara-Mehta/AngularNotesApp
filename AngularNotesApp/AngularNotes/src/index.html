@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Angular QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/src/">
-   <!-- <link rel="stylesheet" href="styles.css"> -->
-
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <!-- Polyfill(s) for older browsers -->
     <script src="/node_modules/core-js/client/shim.min.js"></script>
 
@@ -18,14 +17,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/4654e91647.js"></script>
-    
+
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('main.js').catch(function(err){ console.error(err); });
+        System.import('main.js').catch(function (err) { console.error(err); });
     </script>
-  </head>
+    <script src="https://apis.google.com/js/platform.js?onload=onload()" async defer></script>
+    <meta name="google-signin-client_id" content="405302995130-in1cnlqdqdhbo94vhpruk2m06kght030.apps.googleusercontent.com">
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                auth2.disconnect();
+                console.log('User signed out = ' + auth2.isSignedIn);
+            });
+        }
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
+        }
+        function onSignIn(googleUser) {
+            //window.location = "http://localhost:60315/src/index.html";
+            var profile = googleUser.getBasicProfile();
+            console.log(profile);
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+    </script>
+</head>
 
-  <body>
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <a href="#" onclick="signOut();">Sign out</a>
+
     <my-app>Loading AppComponent content here ...</my-app>
-  </body>
+</body>
 </html>
